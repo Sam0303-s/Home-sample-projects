@@ -2,7 +2,7 @@ import socket as so
 
 c = so.socket()
 
-c.connect(('13.233.174.49',7777))
+c.connect(('13.233.174.49',9999))
 
 hello = c.recv(1024).decode()
 print(hello)
