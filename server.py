@@ -1,18 +1,18 @@
 import socket as so
 
+host = "localhost"
+port = 9999
+
 s = so.socket()
 print("Socket created!!")
 
-s.bind(('localhost',9999))
+s.bind((host,port))
 
 s.listen(8)
 print("Waiting for connections.....")
 
 while True:
     c, addr = s.accept()
-
-    hello = "hello please enter your name:  "
-    s.send(bytes(hello,'utf-8'))
 
     name = c.recv(1024)
     print(f"connected to {addr} ({name.decode()})")
@@ -36,7 +36,6 @@ while True:
         continue
     else:
         continue
-
     while True:
         text_c = c.recv(1024)
         if text_c.decode() == 'exit':

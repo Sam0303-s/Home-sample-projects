@@ -1,8 +1,10 @@
 import socket as so
 
 c = so.socket()
+host = 'localhost'
+port = 9999
 
-c.connect(('13.233.174.49',9999))
+c.connect((host,port))
 
 hello = c.recv(1024).decode()
 print(hello)
